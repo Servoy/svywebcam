@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: svywebcam
+Bundle-Name: svywebcam
+Bundle-Version: 1.0.0
+Package-Type: Web-Component
+
+Name: webcam/webcam.spec
+Web-Component: True
+
