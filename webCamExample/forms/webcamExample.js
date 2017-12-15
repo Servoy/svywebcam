@@ -21,23 +21,20 @@ function onAction(event) {
 /**
  * @properties={typeid:24,uuid:"6F9D0FA9-1C43-4E6A-9EF3-ABBAA62CE021"}
  */
-function callback(data) {	
+function callback(data) {
 	plugins.dialogs.showInfoDialog('SNAP!', '<img src="' + data + '"></>')
 }
 
 /**
- * Callback method for when form is shown.
+ * @param firstShow
+ * @param event
  *
- * @param {Boolean} firstShow form is shown first time after load
- * @param {JSEvent} event the event that triggered the action
- *
- * @private
- *
- * @properties={typeid:24,uuid:"11D6D678-D482-45C5-B3DB-54F82A63500E"}
+ * @properties={typeid:24,uuid:"40BE0E0E-A806-4E07-8715-2115F842D06E"}
  */
 function onShow(firstShow, event) {
-	elements.webcam_200.options = {
-		mirror: false,
+	//setup some initial options
+	var options = {
+		mirror: true,
 		quality: 1,
 		retry_success: false,
 		scale: 1,
@@ -47,4 +44,5 @@ function onShow(firstShow, event) {
 		swf_url: '',
 		timeout: 0
 	}
+	elements.webcam_200.setOptions(options);
 }

@@ -40,7 +40,6 @@ styleClass:"cam"
 location:"9,10",
 name:"webcam_200",
 size:"402,413",
-styleClass:"cam",
 typeName:"svywebcam-webcam",
 typeid:47,
 uuid:"E0E84FE5-ED27-4239-B89E-5274B2EC212E"
@@ -48,7 +47,7 @@ uuid:"E0E84FE5-ED27-4239-B89E-5274B2EC212E"
 ],
 name:"webcamExample",
 navigatorID:"-1",
-onShowMethodID:"11D6D678-D482-45C5-B3DB-54F82A63500E",
+onShowMethodID:"40BE0E0E-A806-4E07-8715-2115F842D06E",
 showInMenu:true,
 size:"420,480",
 typeid:3,
