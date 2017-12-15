@@ -1,7 +1,7 @@
 {
 	"name": "svywebcam-webcam",
 	"displayName": "webcam",
-	"version": 1.0.0,
+	"version": 1,
 	"definition": "svywebcam/webcam/webcam.js",
 	"serverscript": "svywebcam/webcam/webcam_server.js",
 	"libraries": 
