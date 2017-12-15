@@ -1,11 +1,4 @@
 /**
- * @type {Number}
- *
- * @properties={typeid:35,uuid:"3641A2AE-A39E-470F-9B59-EF602989E3E5",variableType:8}
- */
-var quality = null;
-
-/**
  * Perform the element default action.
  *
  * @param {JSEvent} event the event that triggered the action
