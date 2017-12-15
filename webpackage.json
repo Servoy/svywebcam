@@ -3,10 +3,10 @@
     "displayName": "svywebcam",
     "packageType": "Web-Component",
     "icon": "https://raw.githubusercontent.com/Servoy/svywebcam/master/icon.png",
-    "description": "Utilize your webcam with NGClient",
+    "description": "Utilize your webcam with the NGClient",
     "wikiUrl": "https://github.com/Servoy/svywebcam/wiki",
     "sourceUrl": "https://github.com/Servoy/svywebcam",
     "releases": [
-    	{"version": "1.0.0","url": "https://github.com/Servoy/svywebcam/releases/download/v1.0.0/svywebcam.zip","servoy-version":"8.1.1"},
+    	{"version": "1.0.0","url": "https://github.com/Servoy/svywebcam/releases/download/1.0.0/svywebcam.zip","servoy-version":"8.1.1"},
     ]
 }
