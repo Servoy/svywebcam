@@ -3,6 +3,7 @@
 	"displayName": "webcam",
 	"version": 1,
 	"definition": "svywebcam/webcam/webcam.js",
+	"serverscript": "svywebcam/webcam/webcam_server.js",
 	"libraries": 
 	[
 		{
@@ -15,21 +16,55 @@
 
 	"model": 
 	{
-	"options": 
+		"styleClass": 
+		{
+			"type": "styleclass",
+			"tags": 
+			{
+				"scope": "design"
+			}
+		},
+
+		"options": 
 		{
 			"type": "object",
 			"tags": 
 			{
-				"scope": "public"
+				"scope": "private"
 			}
-		},			
-		"styleClass" : { "type" :"styleclass", "tags": { "scope" :"design" }}	
+		}
 	},
 
-	"api": {"capture": {}},
-	
-	"handlers": {
-	"getBase64Data" : {
-	"parameters" : [{ "name" : "data", "type" : "object" }]
-	}}
+	"api": 
+	{
+		"capture": 
+		{
+			
+		},
+
+		"setOptions": 
+		{
+			"parameters": 
+			[
+				{
+					"name": "options",
+					"type": "object"
+				}
+			]
+		}
+	},
+
+	"handlers": 
+	{
+		"getBase64Data": 
+		{
+			"parameters": 
+			[
+				{
+					"name": "data",
+					"type": "object"
+				}
+			]
+		}
+	}
 }
