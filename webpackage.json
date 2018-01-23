@@ -8,5 +8,6 @@
     "sourceUrl": "https://github.com/Servoy/svywebcam",
     "releases": [
     	{"version": "1.0.0","url": "https://github.com/Servoy/svywebcam/releases/download/1.0.0/svywebcam.zip","servoy-version":"8.1.1"},
+    	{"version": "1.0.1","url": "https://github.com/Servoy/svywebcam/releases/download/1.0.1/svywebcam.zip","servoy-version":"8.1.1"}
     ]
 }
