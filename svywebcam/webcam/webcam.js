@@ -58,6 +58,7 @@ angular.module('svywebcamWebcam', ['servoy']).directive('svywebcamWebcam', funct
 						}
 					} else {
 						opt = $scope.model.options;
+						console.log($scope.model.options)
 					}
 
 					$scope.camera.ready(function() {
