@@ -3,11 +3,11 @@ encapsulation:60,
 items:[
 {
 anchors:14,
-location:"90,436",
+location:"29,436",
 onActionMethodID:"0BB5248D-712C-4B4D-9BC8-7B83A7864AF6",
 onDoubleClickMethodID:"-1",
 onRightClickMethodID:"-1",
-size:"170,30",
+size:"359,30",
 text:"Capture Image",
 typeid:7,
 uuid:"AEB2A7A8-61E5-472C-9F79-1221320A96BC"

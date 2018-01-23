@@ -1,5 +1,4 @@
-angular.module('svywebcamWebcam', ['servoy'])
-.directive('svywebcamWebcam', function($timeout, $sabloConstants) {
+angular.module('svywebcamWebcam', ['servoy']).directive('svywebcamWebcam', function($timeout, $sabloConstants) {
 		return {
 			restrict: 'E',
 			scope: {
@@ -8,39 +7,7 @@ angular.module('svywebcamWebcam', ['servoy'])
 				handlers: "=svyHandlers",
 				svyApi: "=svyServoyapi"
 			},
-			controller: function($scope, $element, $attrs) {
-				var className;
-
-				var element = $element.children().first();
-
-				Object.defineProperty($scope.model, $sabloConstants.modelChangeNotifier, {
-						configurable: true,
-						value: function(property, value) {
-							switch (property) {
-							case "styleClass":	
-								if (className)
-									element.removeClass(className);
-								className = value;
-								if (className)
-									element.addClass(className);
-								break;
-							}
-						}
-					});
-
-				var destroyListenerUnreg = $scope.$on("$destroy", function() {
-						destroyListenerUnreg();
-						delete $scope.model[$sabloConstants.modelChangeNotifier];
-					});
-
-				// data can already be here, if so call the modelChange function so
-				// that it is initialized correctly.
-				var modelChangFunction = $scope.model[$sabloConstants.modelChangeNotifier];
-				for (key in $scope.model) {
-					modelChangFunction(key, $scope.model[key]);
-				}
-
-			},
+			controller: function($scope, $element, $attrs) { },
 			link: function($scope, $element, $attrs) {
 
 				//intialize camera
@@ -65,8 +32,12 @@ angular.module('svywebcamWebcam', ['servoy'])
 
 				//setup the camera with options
 				function setupCamera() {
-					$scope.camera = new JpegCamera($scope.model.svyMarkupId);
-				}				
+					try {
+						$scope.camera = new JpegCamera($scope.model.svyMarkupId);
+					} catch (e) {
+						console.log(e)
+					}
+				}
 
 				//capture an image
 				$scope.api.capture = function() {
