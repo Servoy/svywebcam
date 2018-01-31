@@ -16,14 +16,14 @@ var mirror = 1;
  *
  * @properties={typeid:35,uuid:"587068C3-D322-4BD4-B9D3-4B68FD5641D6",variableType:8}
  */
-var quality = 0.1;
+var quality = 1;
 
 /**
  * @type {Number}
  *
  * @properties={typeid:35,uuid:"A8B45FB7-6645-4909-A003-79850FF2D8FD",variableType:8}
  */
-var scale = 0.1;
+var scale = 1;
 
 /**
  * Perform the element default action.
@@ -59,3 +59,43 @@ function callback(data) {
 
 }
 
+
+/**
+ *
+ * @return {RuntimeForm<AbstractMicroSample>}
+ *
+ * @properties={typeid:24,uuid:"83AE9F04-A21C-489B-A11A-DD61029A5B73"}
+ */
+function getParent() {
+	return forms.specializedSamples;
+}
+
+/**
+*
+* @return {String}
+*
+* @properties={typeid:24,uuid:"E704D751-ACA0-4DC2-8C42-4BAF1BF13659"}
+*/
+function getName() {
+	return 'Web Cam';
+}
+
+/**
+*
+* @return {String}
+*
+* @properties={typeid:24,uuid:"648E8E94-A627-41A3-8742-7749C475D7F2"}
+*/
+function getIconStyleClass() {
+	return 'fa-video-camera';
+}
+
+/**
+*
+* @return {String}
+*
+* @properties={typeid:24,uuid:"6F72D42A-E955-4EF6-BB21-F86864164F9B"}
+*/
+function getDescription() {
+	return 'Web Camera integration. Say cheese!';
+}
