@@ -7,9 +7,23 @@
 	"libraries": 
 	[
 		{
+			"name": "swfObj",
+			"version": "2.2.0",
+			"url": "svywebcam/webcam/lib/swfobject.js",
+			"mimetype": "text/javascript"
+		},
+
+		{
+			"name": "Canvas-to-blob",
+			"version": "3.2.0",
+			"url": "svywebcam/webcam/lib/canvas-to-blob.js",
+			"mimetype": "text/javascript"
+		},
+
+		{
 			"name": "Jpeg Camera",
 			"version": "1.3.3",
-			"url": "svywebcam/webcam/lib/jpeg_camera_with_dependencies.min.js",
+			"url": "svywebcam/webcam/lib/jpeg_camera.js",
 			"mimetype": "text/javascript"
 		}
 	],

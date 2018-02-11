@@ -33,6 +33,7 @@ angular.module('svywebcamWebcam', ['servoy']).directive('svywebcamWebcam', funct
 				//setup the camera with options
 				function setupCamera() {
 					try {
+						console.log('setting up camera')
 						$scope.camera = new JpegCamera($scope.model.svyMarkupId);
 					} catch (e) {
 						console.log(e)
@@ -51,14 +52,14 @@ angular.module('svywebcamWebcam', ['servoy']).directive('svywebcamWebcam', funct
 							retry_success: false,
 							scale: 1,
 							shutter: false,
-							shutter_ogg_url: '',
-							shutter_mp3_url: '',
-							swf_url: '',
+							shutter_ogg_url: null,
+							shutter_mp3_url: null,
+							swf_url: 'lib/jpeg_camera/jpeg_camera.swf',
 							timeout: 0
 						}
 					} else {
 						opt = $scope.model.options;
-						console.log($scope.model.options)
+//						console.log(opt)
 					}
 
 					$scope.camera.ready(function() {
