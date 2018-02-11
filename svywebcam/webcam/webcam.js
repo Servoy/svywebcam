@@ -51,18 +51,15 @@ angular.module('svywebcamWebcam', ['servoy']).directive('svywebcamWebcam', funct
 							quality: 1,
 							retry_success: false,
 							scale: 1,
-							shutter: false,
-							shutter_ogg_url: null,
-							shutter_mp3_url: null,
-							swf_url: 'lib/jpeg_camera/jpeg_camera.swf',
+							shutter: true,
 							timeout: 0
 						}
 					} else {
-						opt = $scope.model.options;
-//						console.log(opt)
+						opt = $scope.model.options;						
 					}
 
 					$scope.camera.ready(function() {
+						console.log($scope.camera.options)
 						var snapshot = $scope.camera.capture(opt).show();
 						//get blob data
 						snapshot.get_blob(function() {

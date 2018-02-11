@@ -41,10 +41,7 @@ function onAction(event) {
 		quality: quality,
 		retry_success: false,
 		scale: scale,
-		shutter: false,
-		shutter_ogg_url: '',
-		shutter_mp3_url: '',
-		swf_url: '',
+		shutter: true,
 		timeout: 0
 	}
 	elements.webcam_200.setOptions(options);
