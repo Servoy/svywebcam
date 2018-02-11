@@ -1,4 +1,11 @@
 /**
+ * @type {Number}
+ *
+ * @properties={typeid:35,uuid:"7ED9D060-2BAB-4D2C-A012-848119A9301C",variableType:4}
+ */
+var shutter = 1;
+
+/**
  * @type {JSMedia}
  *
  * @properties={typeid:35,uuid:"E2380A9D-6047-4ABD-BDFA-B102806D8D55",variableType:-4}
@@ -41,7 +48,7 @@ function onAction(event) {
 		quality: quality,
 		retry_success: false,
 		scale: scale,
-		shutter: true,
+		shutter: shutter,
 		timeout: 0
 	}
 	elements.webcam_200.setOptions(options);
