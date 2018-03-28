@@ -19,12 +19,5 @@ mimeType:"audio/ogg",
 name:"shutter.ogg",
 typeid:37,
 uuid:"042D2E9F-28F5-4A5B-A24B-D29244B15FC6"
-},
-{
-encapsulation:0,
-mimeType:"text/css",
-name:"styles.css",
-typeid:37,
-uuid:"A81BAAD1-20FD-4C98-94AF-80029C1A84D6"
 }
 ]
