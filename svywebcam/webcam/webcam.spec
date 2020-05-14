@@ -1,6 +1,7 @@
 {
 	"name": "svywebcam-webcam",
 	"displayName": "webcam",
+	"categoryName": "Media",
 	"version": 1,
 	"definition": "svywebcam/webcam/webcam.js",
 	"serverscript": "svywebcam/webcam/webcam_server.js",
