@@ -3,6 +3,7 @@
 	"displayName": "webcam",
 	"categoryName": "Media",
 	"version": 1,
+	"icon": "svywebcam/webcam/icon.png",
 	"definition": "svywebcam/webcam/webcam.js",
 	"serverscript": "svywebcam/webcam/webcam_server.js",
 	"libraries": 
