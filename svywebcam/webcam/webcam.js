@@ -7,7 +7,12 @@ angular.module('svywebcamWebcam', ['servoy']).directive('svywebcamWebcam', funct
 				handlers: "=svyHandlers",
 				svyApi: "=svyServoyapi"
 			},
-			controller: function($scope, $element, $attrs) { },
+			controller: function($scope, $element, $attrs) { 
+				
+				var destroyListenerUnreg = $scope.$on("$destroy", function() {
+                    $scope.camera.dosomethingHereToDestroyCameraIfExists
+                });
+			},
 			link: function($scope, $element, $attrs) {
 
 				//intialize camera
@@ -29,9 +34,21 @@ angular.module('svywebcamWebcam', ['servoy']).directive('svywebcamWebcam', funct
 				function doneResizing() {
 					setupCamera()
 				}
+				
+				function stopCamera() {
+					if ($scope.camera) {
+						$scope.camera.stop();
+					}
+				}
 
 				//setup the camera with options
 				function setupCamera() {
+					try {
+						stopCamera();
+					} catch (e) {
+						console.log(e)
+					}
+					
 					try {
 						console.log('setting up camera')
 						$scope.camera = new JpegCamera($scope.model.svyMarkupId);
@@ -77,6 +94,12 @@ angular.module('svywebcamWebcam', ['servoy']).directive('svywebcamWebcam', funct
 
 					})
 				}
+				
+				var destroyListenerUnreg = $scope.$on("$destroy", function() {
+					clearInterval(init);
+					clearTimeout(resize);
+					stopCamera();
+                });
 
 			},
 			templateUrl: 'svywebcam/webcam/webcam.html'

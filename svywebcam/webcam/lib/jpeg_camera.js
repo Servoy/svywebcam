@@ -102,7 +102,37 @@
     };
 
     JpegCamera.prototype._snapshots = {};
+    
+    JpegCamera.prototype.stop = function() {
+        if(navigator.getUserMedia) {
+           if (this.activeTrack) {
+             return this.activeTrack.stop();
+           }
+           var that = this;
+           if (that.video && that.video.srcObject) {
+        	   that.video.srcObject.getTracks().forEach(function (track) {
+				      track.stop();
+				      //that.video.srcObject.removeTrack(track);
+				  });
+           }
+        }
+        if (!navigator.getUserMedia) {
+    			// turn off camera in flash
+          var flashId = this.getFlashID();
+          var movie = document.getElementById(flashId);
+          movie.parentNode.removeChild(movie);
+  		  }
+      };
 
+      JpegCamera.prototype.setFlashID = function(id) {
+        this._flashContainerID = id;
+      };
+
+      JpegCamera.prototype.getFlashID = function() {
+        return this._flashContainerID;
+      };
+      
+      
     JpegCamera.prototype.show_stream = function() {
       this._engine_show_stream();
       this._displayed_snapshot = null;
@@ -642,6 +672,7 @@
           return;
         }
         flash_object_id = "flash_object_" + this._id;
+        this.setFlashID(flash_object_id);
         params = {
           loop: "false",
           allowScriptAccess: "always",
