@@ -1,13 +1,16 @@
+import { Webcam } from './webcam/webcam';
 
 import { NgModule } from '@angular/core';
  
 @NgModule({
     declarations: [
+		Webcam,
     ],
     providers: [],
     imports: [
     ],
-    exports: [ 
+    exports: [
+		Webcam, 
       ]
 })
 export class svywebcamModule {}
