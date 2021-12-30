@@ -1,6 +1,6 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../dist/servoy/ng2package",
+  "dest": "../../dist/servoy/svywebcam",
      "assets": [
         "styles.css"
     ],

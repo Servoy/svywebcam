@@ -5,7 +5,7 @@ Bundle-Version: 1.0.5
 Package-Type: Web-Component
 NPM-PackageName: @servoy/svywebcam
 NG2-Module: svywebcamModule
-Entry-Point: dist/servoy/ng2package
+Entry-Point: dist/servoy/svywebcam
 
 Name: webcam/webcam.spec
 Web-Component: True

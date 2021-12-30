@@ -8,19 +8,19 @@
   "projects": {
     "@servoy/svywebcam": {
       "projectType": "library",
-      "root": "projects/ng2package",
-      "sourceRoot": "projects/ng2package/src",
+      "root": "projects/svywebcam",
+      "sourceRoot": "projects/svywebcam/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/ng2package/tsconfig.lib.json",
-            "project": "projects/ng2package/ng-package.json"
+            "tsConfig": "projects/svywebcam/tsconfig.lib.json",
+            "project": "projects/svywebcam/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/ng2package/tsconfig.lib.prod.json"
+              "tsConfig": "projects/svywebcam/tsconfig.lib.prod.json"
             }
           }
         },
@@ -28,9 +28,9 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "preserveSymlinks": true,
-            "main": "projects/ng2package/src/test.ts",
-            "tsConfig": "projects/ng2package/tsconfig.spec.json",
-            "karmaConfig": "projects/ng2package/karma.conf.js"
+            "main": "projects/svywebcam/src/test.ts",
+            "tsConfig": "projects/svywebcam/tsconfig.spec.json",
+            "karmaConfig": "projects/svywebcam/karma.conf.js"
           }
         },
         "lint": {
@@ -38,8 +38,8 @@
           "options": {
             "preserveSymlinks": true,
             "lintFilePatterns": [
-              "projects/ng2package/src/**/*.ts",
-              "projects/ng2package/src/**/*.html"
+              "projects/svywebcam/src/**/*.ts",
+              "projects/svywebcam/src/**/*.html"
             ]
           }
         }
