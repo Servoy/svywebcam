@@ -1,7 +1,7 @@
 /*
  * Public API Surface
  */
-export * from './ng2package.module';
+export * from './svywebcam.module';
 //export all components here
 //export * from './svygmaps/svygmaps';
 export * from './webcam/webcam';
