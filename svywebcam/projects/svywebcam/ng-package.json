@@ -5,8 +5,7 @@
         "styles.css"
     ],
   "lib": {
-    "entryFile": "src/public-api.ts",
-    "umdId": "servoy.svywebcam"
+    "entryFile": "src/public-api.ts"
   },
-  "allowedNonPeerDependencies": []
+  "allowedNonPeerDependencies": ["ngx-webcam"]
 }
