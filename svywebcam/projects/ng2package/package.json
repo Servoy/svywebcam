@@ -8,6 +8,7 @@
     "@angular/forms": "^13"
   },
   "dependencies": {
+    "ngx-webcam": "^0.4.1",
     "tslib": "*"
   },
   "license": "MIT",

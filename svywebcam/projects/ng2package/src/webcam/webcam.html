@@ -1,3 +1,23 @@
-<div>
-    Hello <span></span>!
+<div [id]="servoyApi.getMarkupId()" #element
+[ngClass]="styleClass"
+class="svy-webcam" 
+style="width:100%;height:100%;overflow:hidden">
+    <webcam
+    *ngIf="!errors.length && !errorAccessDenied"
+    (initError)="handleInitError($event)"
+    (imageCapture)="handleCapture($event)"
+    [trigger]="triggerObservable"
+    [width]="width"
+    [height]="height"
+    [imageQuality]="optQuality"
+    [mirrorImage]="optMirror"
+    [videoOptions]="videoOptions"
+    ></webcam>
+    <div *ngIf="errorAccessDenied">
+        <p>You have denied camera access.</p>
+        <p>Look for camera icon around your address bar to change your</p>
+    </div>
+    <ul *ngFor="let error of errors">
+        <p>{{error | json}}</p>
+    </ul>
 </div>
