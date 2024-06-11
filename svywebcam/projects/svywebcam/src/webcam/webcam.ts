@@ -167,11 +167,17 @@ export class Webcam extends ServoyBaseComponent<HTMLDivElement>{
             } else {
                 delete this.videoOptions.aspectRatio;
             }
+			if (['environment','user'].includes(this.options['facingMode'])) {
+				this.videoOptions.facingMode = { ideal: this.options['facingMode']};
+			} else {
+				delete this.videoOptions.facingMode;
+			}
         } else {
             // reset to default
             this.optMirror = "never";
             this.optQuality = 1;
             delete this.videoOptions.aspectRatio;
+			delete this.videoOptions.facingMode;
         }
 
     }
