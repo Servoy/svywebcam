@@ -3,7 +3,7 @@
 class="svy-webcam" 
 style="width:100%;height:100%;overflow:hidden">
     <webcam
-    *ngIf="!errors.length && !errorAccessDenied"
+    *ngIf="!errors.length && !errorAccessDenied && showWebCam"
     (initError)="handleInitError($event)"
     (imageCapture)="handleCapture($event)"
     [trigger]="triggerObservable"

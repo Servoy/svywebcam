@@ -64,8 +64,9 @@ export class Webcam extends ServoyBaseComponent<HTMLDivElement>{
     // TODO expose facindMode and other MediaTrackConstraints
     public videoOptions: MediaTrackConstraints = {
         // width: {ideal: 1024},
-        // height: {ideal: 576}
-        // aspectRatio: {ideal: 4/3}
+        // height: {ideal: 576},
+        // aspectRatio: {ideal: 4/3},
+		// facingMode: {ideal: 'user' or 'environment'}
     };
 
     // Scope variables & objects
@@ -73,6 +74,8 @@ export class Webcam extends ServoyBaseComponent<HTMLDivElement>{
     public errors: WebcamInitError[] = [];
 
     resizeObserver: ResizeObserver;
+	
+	showWebCam = true;
 
     // webcam snapshot trigger
     private trigger: Subject<void> = new Subject<void>();
@@ -153,7 +156,7 @@ export class Webcam extends ServoyBaseComponent<HTMLDivElement>{
       }
 
     private refreshOptions() {
-
+		this.showWebCam = false;
         // refresh the options which have been modified by the server side function setOptions(options)
         if (this.options) {
             this.optMirror = this.options['mirror'] ? "always" : "never";
@@ -179,6 +182,10 @@ export class Webcam extends ServoyBaseComponent<HTMLDivElement>{
             delete this.videoOptions.aspectRatio;
 			delete this.videoOptions.facingMode;
         }
+		setTimeout(() => {
+			this.showWebCam = true;
+			this.cdRef.detectChanges();
+		}) 
 
     }
 
