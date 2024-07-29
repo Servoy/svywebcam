@@ -12,6 +12,7 @@
     	{"version": "1.0.2","url": "https://github.com/Servoy/svywebcam/releases/download/1.0.2/svywebcam.zip","servoy-version":"8.1.1"},
         {"version": "1.0.3","url": "https://github.com/Servoy/svywebcam/releases/download/1.0.3/svywebcam.zip","servoy-version":"8.1.1"},
         {"version": "1.0.4","url": "https://github.com/Servoy/svywebcam/releases/download/1.0.4/svywebcam.zip","servoy-version":"2020.3.0"},
-        {"version": "2022.12.0","url": "https://github.com/Servoy/svywebcam/releases/download/v2022.12.0/svywebcam.zip","servoy-version":"2022.9.0"}
+        {"version": "2022.12.0","url": "https://github.com/Servoy/svywebcam/releases/download/v2022.12.0/svywebcam.zip","servoy-version":"2022.9.0"},
+        {"version": "2024.3.0","url": "https://github.com/Servoy/svywebcam/releases/download/v2024.3/svywebcam.zip","servoy-version":"2024.3.0"}
     ]
 }
