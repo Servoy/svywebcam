@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-SymbolicName: svywebcam
 Bundle-Name: svywebcam
-Bundle-Version: 2024.3.0
+Bundle-Version: 2024.3.1
 Package-Type: Web-Component
 NPM-PackageName: @servoy/svywebcam
 NG2-Module: svywebcamModule
