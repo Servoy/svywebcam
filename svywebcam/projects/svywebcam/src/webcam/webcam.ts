@@ -6,7 +6,8 @@ import {WebcamImage, WebcamInitError, WebcamUtil} from 'ngx-webcam';
 
 @Component({
     selector: 'svywebcam-webcam',   // means can drop this template in a parent template using the <svywebcam-webcam> tag
-    templateUrl: './webcam.html'
+    templateUrl: './webcam.html',
+    standalone: false
 })
 export class Webcam extends ServoyBaseComponent<HTMLDivElement>{
 
@@ -76,6 +77,11 @@ export class Webcam extends ServoyBaseComponent<HTMLDivElement>{
     resizeObserver: ResizeObserver;
 	
 	showWebCam = true;
+    
+    availableDevicesId: string[] = [];
+    // switch to next / previous / specific webcam; true/false: forward/backwards, string: deviceId
+    // we are using only string for now, so will switch to a specific deviceId
+    private switchCamera: Subject<boolean|string> = new Subject<boolean|string>();
 
     // webcam snapshot trigger
     private trigger: Subject<void> = new Subject<void>();
@@ -99,6 +105,7 @@ export class Webcam extends ServoyBaseComponent<HTMLDivElement>{
         // set default width/height on init
         this.width = this.elementRef.nativeElement.clientWidth;
         this.height = this.elementRef.nativeElement.clientHeight;
+        this.getAvailableVideoInputsId();
     }
     
     svyOnChanges( changes: SimpleChanges ) {
@@ -188,10 +195,34 @@ export class Webcam extends ServoyBaseComponent<HTMLDivElement>{
 		}) 
 
     }
+    
+    public get switchCameraObservable(): Observable<boolean | string> {
+        return this.switchCamera.asObservable();
+    }
+
+    private async getAvailableVideoInputsId(): Promise<void> {
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+            const mediaDevices = await WebcamUtil.getAvailableVideoInputs();
+            this.availableDevicesId = mediaDevices.map(device => device.deviceId);
+            stream.getTracks().forEach(track => track.stop());
+        } catch (error) {
+            console.warn('Failed to get video inputs:', error);
+            this.availableDevicesId = [];
+        }
+    }
 
     /* Web Component API */
 
     capture() {
         this.trigger.next();
-    }    
+    }
+    
+    getDevicesId(): string[] {
+        return this.availableDevicesId;
+    }
+
+    setDeviceId(deviceId: string): void {
+        this.switchCamera.next(deviceId);
+    }
 }

@@ -67,7 +67,21 @@
 					"type": "object"
 				}
 			]
-		}
+		},
+		"getDevicesId":
+		{
+		  "returns": "string[]"
+		},
+		"setDeviceId":
+        {
+          "parameters":
+          [
+            {
+              "name": "deviceId",
+              "type": "string"
+            }
+          ]
+        }
 	},
 
 	"handlers": 

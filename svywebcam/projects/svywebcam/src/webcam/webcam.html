@@ -12,6 +12,7 @@ style="width:100%;height:100%;overflow:hidden">
     [imageQuality]="optQuality"
     [mirrorImage]="optMirror"
     [videoOptions]="videoOptions"
+    [switchCamera]="switchCameraObservable"
     ></webcam>
     <div *ngIf="errorAccessDenied">
         <p>You have denied camera access.</p>
