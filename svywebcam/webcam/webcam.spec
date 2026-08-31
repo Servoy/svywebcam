@@ -48,7 +48,8 @@
 			{
 				"scope": "private"
 			}
-		}
+		},
+		"visible": "visible"
 	},
 
 	"api": 
